@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kamesh – Personal Site</title>
+  <meta name="description" content="Personal site for Kamesh: profile, work, and contact details." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Kamesh – Personal Site" />
+  <meta property="og:description" content="Profile, work, and ways to reach me." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg: #0b0d12;        /* deep slate */
+      --card: #12151c;
+      --text: #e7ecf3;
+      --muted: #9fb0c3;
+      --brand: #4eb5ff;
+      --brand-2: #9bffd1;
+      --ring: #4eb5ff55;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f8fafc; --card:#ffffff; --text:#0b1220; --muted:#5b6b7b; }
+    }
+    html,body{height:100%;scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(1200px 800px at 10% -10%, #152036 0%, transparent 60%),
+                   radial-gradient(1000px 700px at 110% 10%, #14242e 0%, transparent 60%), var(--bg);
+         color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif}
+    .container{max-width:1000px;margin:auto;padding:0 20px}
+    /* Nav */
+    .nav{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid #ffffff17;z-index:10}
+    .nav-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .menu{display:flex;gap:16px}
+    .menu a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
+    .menu a:hover{color:var(--text);background:#ffffff0e}
+    .menu-btn{display:none}
+    @media (max-width:720px){
+      .menu{display:none}
+      .menu.open{display:flex;flex-direction:column;gap:8px;padding:12px 0}
+      .menu-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #ffffff2a;border-radius:12px;background:#0000;color:var(--text)}
+    }
+    /* Hero */
+    .hero{padding:72px 0 36px}
+    .hero h1{font-size:clamp(28px, 4vw, 44px);line-height:1.15;margin:0 0 10px}
+    .hero p{max-width:60ch;color:var(--muted);margin:8px 0 24px}
+    .chip{display:inline-block;border:1px solid #ffffff22;border-radius:999px;padding:6px 12px;color:var(--muted);font-size:14px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #ffffff2a;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#05131c;text-decoration:none;font-weight:600}
+    .btn.ghost{background:#0000;color:var(--text)}
+    .grid{display:grid;gap:18px}
+    .card{background:linear-gradient(180deg, #ffffff06, #00000000);border:1px solid #ffffff17;border-radius:16px;padding:18px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    section{padding:28px 0}
+    .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    @media (max-width:880px){.two-col{grid-template-columns:1fr}}
+    /* Lists */
+    ul.clean{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+    ul.clean li{display:flex;align-items:flex-start;gap:10px}
+    .tick{inline-size:1em;block-size:1em;border-radius:50%;outline:2px solid var(--ring);display:inline-grid;place-items:center}
+    .tick::after{content:"✔";font-size:.72em;color:var(--brand)}
+    /* Footer */
+    footer{padding:30px 0;color:var(--muted);border-top:1px solid #ffffff12;margin-top:30px}
+    .small{font-size:13px;color:var(--muted)}
+    /* Skip link */
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:12px;top:12px;z-index:999;background:#000;border:2px solid #fff;color:#fff;padding:8px 12px;border-radius:8px}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kamesh Nanayakkara",
+    "jobTitle": "Audit Director",
+    "url": "https://example.com",
+    "worksFor": {"@type": "Organization", "name": "Baker Tilly Gomez"}
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Kamesh</div>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">☰ Menu</button>
+      <nav id="menu" class="menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <span class="chip">👋 Hello</span>
+      <h1>I'm Kamesh — an Audit & Assurance professional.</h1>
+      <img src="assets/profile.jpg" alt="Kamesh Nanayakkara portrait" class="profile-photo" />
+      <p>I lead engagements, build strong client relationships, and deliver timely, IFRS‑compliant financial reporting. This is my simple, fast personal page. You can reuse this template by swapping copy and links.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#work">See recent work</a>
+      </div>
+    </section>
+
+    <section id="about" class="two-col">
+      <div class="card">
+        <h3>About</h3>
+        <p class="small">Short bio</p>
+        <p>Director – Audit & Assurance at Baker Tilly Gomez, based in The Bahamas. Passionate about clear financial storytelling, strong controls, and coaching teams.</p>
+        <ul class="clean">
+          <li><span class="tick"></span>IFRS (full + SMEs)</li>
+          <li><span class="tick"></span>Engagement leadership & QC</li>
+          <li><span class="tick"></span>Process improvement</li>
+        </ul>
+      </div>
+      <aside class="card">
+        <h3>Quick facts</h3>
+        <ul class="clean">
+          <li>📍 Nassau, Bahamas</li>
+          <li>🏢 Baker Tilly Gomez</li>
+          <li>🎯 Focus: audits, BL, VAT, advisory</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="work">
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+        <article class="card">
+          <h3>Highlighted Engagement</h3>
+          <p class="small">Case snapshot</p>
+          <p>Delivered a first‑year audit under tight deadlines, improved disclosures, and issued a comprehensive management letter.</p>
+        </article>
+        <article class="card">
+          <h3>Clients</h3>
+          <p class="small">Selected names (public‑safe)</p>
+          <p>Equity Bank Bahamas Group, BTVI, Lyford Cay POA, Cable Bahamas (separated accounts) and more.</p>
+        </article>
+        <article class="card">
+          <h3>Speaking & Training</h3>
+          <p class="small">L&D</p>
+          <p>CaseWare tips, ISQM 1/2, IFRS refreshers for junior staff.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="two-col">
+      <div class="card">
+        <h3>Services</h3>
+        <ul class="clean">
+          <li><span class="tick"></span>External audit & QC reviews</li>
+          <li><span class="tick"></span>Business Licence & VAT support</li>
+          <li><span class="tick"></span>Advisory & process improvements</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Availability</h3>
+        <p>Open to collaboration, panels, and knowledge‑sharing sessions. Let’s talk.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="two-col">
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a><br>
+           LinkedIn: <a href="#">linkedin.com/in/your-handle</a></p>
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label>Name<br><input name="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ffffff33;background:#0000;color:var(--text)"></label><br><br>
+          <label>Message<br><textarea name="message" rows="5" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ffffff33;background:#0000;color:var(--text)"></textarea></label><br><br>
+          <button class="btn" type="submit">Send</button>
+        </form>
+        <p class="small">Tip: replace the mailto with a form service (e.g., Formspree) for reliability.</p>
+      </div>
+      <aside class="card">
+        <h3>Downloads</h3>
+        <ul class="clean">
+          <li><a href="#">Resume (PDF)</a></li>
+          <li><a href="#">vCard</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <footer>
+      <div class="container small">© <span id="yr"></span> Kamesh. Built with a single HTML file.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('#menu');
+    btn?.addEventListener('click', ()=>{
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
